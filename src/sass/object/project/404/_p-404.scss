@@ -1,0 +1,42 @@
+@use "global" as *;
+
+.p-404{
+ padding-top: rem(50);
+}
+
+.p-404__wrap{
+    @include mq("md") {
+    display: flex;
+    gap: rem(30);
+  }
+}
+
+.p-404__body{
+  flex: 1;
+  text-align: center;
+}
+
+.p-404__text{
+  display: inline-block;
+  color: $main-color;
+  font-size: rem(20);
+  line-height: 1.71; 
+  text-align: left;
+}
+
+.p-404__img{
+  position: relative;
+  border-radius: 12px;
+  width: 100%;
+  aspect-ratio: 335/188;
+  margin-inline: auto;
+  @include mq("md") {
+    aspect-ratio: 1160/340;
+  }
+}
+
+.p-404__img,
+.p-404__img img{ 
+  border-radius: 12px;
+}
+

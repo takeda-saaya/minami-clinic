@@ -1,0 +1,89 @@
+@use "global" as *;
+
+.nav-links{
+  display:flex;
+  justify-content: center;
+}
+
+.page-numbers{
+  display:inline-block;
+  font-size: rem(12);
+  font-weight:$medium;
+  margin-right: rem(7);
+  padding:rem(6) rem(11);
+  color:$main-color;
+  border-radius:4px;
+  background:#ffffff;
+  border: 1px solid $main-color;
+  @include mq("md") {
+    font-size: rem(14);
+    padding:rem(7) rem(13);
+  }
+}
+
+.page-numbers:hover{
+  color: $white;
+  background-color: $main-color;
+}
+
+.page-numbers.current{
+  background:$main-color;
+  color:#ffffff;
+}
+
+.page-numbers.prev{
+  padding: rem(7) rem(15) rem(7) rem(34);
+}
+
+.page-numbers.next{
+  padding: rem(7) rem(33) rem(7) rem(16);
+}
+
+.page-numbers.prev,
+.page-numbers.next{
+  position: relative;
+  background:$main-color;
+  box-shadow:none;
+  border:none;
+  color:$white; 
+  opacity: 1;
+}
+
+.page-numbers.prev::before,
+.page-numbers.next::before{
+  position: absolute;
+  content: "";
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: rem(14);
+  height: rem(14);
+  aspect-ratio: 1/1;
+  top: 50%;
+  transform: translatey(-50%);
+  transition: left 0.3s, right 0.3s;
+}
+
+.page-numbers.prev::before{
+  background-image: url(".././images/archive/pagenavi-prev.png");
+  left: rem(10);
+}
+
+.page-numbers.next::before{
+  background-image: url(".././images/archive/pagenavi-next.png");
+  right: rem(10);
+}
+
+.page-numbers.prev:hover::before {
+  left: rem(5); 
+}
+
+.page-numbers.next:hover::before {
+  right: rem(5); 
+}
+.page-numbers.dots{
+  background:transparent;
+  box-shadow:none;
+  border:none;
+  color:#666666; 
+}

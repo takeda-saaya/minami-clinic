@@ -1,0 +1,28 @@
+@use "global" as *;
+
+.p-contact__inner{
+  @include mq("md") {
+    max-width: calc(rem(730) + ($padding-pc) * 2);
+  }
+}
+
+.p-contact__text {
+  font-size: rem(14);
+  line-height: 1.71;
+}
+
+.p-contact__text span{
+  color: $accent-color;
+}
+
+.p-contact__title-wrap{
+  text-align: center;
+  margin-top:rem(100) ;
+  @include mq("md") {
+    margin-top: rem(150);
+  }
+}
+
+.p-contact__body {
+  margin-top: rem(70);
+}

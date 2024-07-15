@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.p-single__content{
+    @include mq("md") {
+    display: flex;
+    gap: rem(30);
+  }
+}

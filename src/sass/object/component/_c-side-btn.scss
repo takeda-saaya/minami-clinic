@@ -1,0 +1,30 @@
+@use "global" as *;
+
+.c-side-btn{
+  position: fixed;
+  width: min(vw($full,92),rem(92));
+  top: rem(176);
+  right: 0;
+  padding: min(vw($full,20),rem(20)) min(vw($full,16),rem(16));
+  background-color: $main-color;
+  border-radius: 20px 0px 0px 20px;
+  z-index: 100;
+}
+
+.c-side-btn:hover{
+  background-color:$sub-color1;
+}
+
+.c-side-btn__img{
+  width: 100%;
+  max-width: min(vw($full,52),rem(52));
+  aspect-ratio: 52/32;
+}
+
+.c-side-btn__text{
+  color: $white;
+  font-size: min(vw($full,14),rem(14));
+  font-weight: $bold;
+  line-height: 1.3; 
+  margin-top: min(vw($full,11),rem(11));
+}

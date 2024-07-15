@@ -1,0 +1,39 @@
+@use "global" as *;
+
+.p-staff__inner{
+  max-width: rem(550);
+}
+
+.p-staff__title-wrap{
+  text-align: center;
+}
+
+.p-staff__content{
+  margin-top: rem(36);
+  @include mq("md") {
+    margin-top: rem(60);
+  }
+}
+
+.p-staff__occupation{
+  font-weight: $bold;
+  letter-spacing: 1.28px;
+  padding-bottom: rem(7);
+  border-bottom: 1px solid #707070;
+  @include mq("md") {
+    padding-bottom: rem(6);
+  }
+}
+
+.p-staff__boxs{
+  display: grid;
+  gap: rem(56);
+  margin-top: rem(36);
+  @include mq("md") {
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(80);
+    row-gap: rem(60);
+    margin-top: rem(40);
+    align-items: baseline;  
+  }
+}

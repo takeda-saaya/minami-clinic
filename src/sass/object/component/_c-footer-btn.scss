@@ -1,0 +1,40 @@
+@use "global" as *;
+
+.c-footer-btn {
+  display: flex;
+  gap: rem(8);
+  justify-content: center;
+  align-items: center;
+  font-size: rem(14);
+  border-radius: 30px;
+  padding: rem(10) rem(8);
+  min-width: rem(150);
+  @include mq("md") {
+    font-size: rem(16);
+    min-width: rem(220);
+    padding: rem(16) rem(8) rem(15);
+  }
+}
+
+.c-footer-btn--left{
+  color: $white;
+  font-weight: 400;
+  background-color: $main-color;
+}
+
+.c-footer-btn--left:hover{
+  background-color:$main-color ;
+}
+
+.c-footer-btn--right {
+  color: $main-color;
+  border: 1px solid currentColor;
+  background-color: $white;
+}
+
+.c-footer-btn--right:hover{
+  background-color:$sub-color1 ;
+  color: $white;
+}
+
+

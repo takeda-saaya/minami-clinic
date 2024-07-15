@@ -1,0 +1,9 @@
+@use "global" as *;
+
+.p-archive-blog__cards{
+  display: grid;
+  place-items: center;
+  justify-content: start;
+  gap: rem(20);
+}
+

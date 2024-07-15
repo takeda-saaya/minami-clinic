@@ -1,0 +1,10 @@
+@use "global" as *;
+
+.c-sidebar-titile{
+  font-size: rem(16);
+  font-weight: $bold;
+  line-height: 1.25; 
+  padding-bottom: rem(10);
+  padding-left: rem(34);
+  border-bottom: 1px solid #888;;
+}

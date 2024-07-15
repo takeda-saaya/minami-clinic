@@ -1,0 +1,45 @@
+@use "global" as *;
+
+.c-btn {
+  display: inline-block;
+  min-width: rem(164);
+  border-radius: 24px;
+  border: 1px solid currentColor;
+  font-size: rem(14);
+  line-height: 1;
+  background: $white;
+  color: $main-color;
+  padding: rem(12) rem(40);
+  position: relative;
+  @include mq("md") {
+    padding: rem(14) rem(45);
+  }
+}
+
+.c-btn::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: rem(13);
+  top: 50%;
+  transform: translateY(-50%);
+  width: rem(12);
+  height: rem(12);
+  background-image: url(".././images/common/btn-arrow.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: right 0.3s, filter 0.3s; 
+  @include mq("md") {
+    right: rem(15);
+  }
+}
+
+.c-btn:hover {
+  background: $main-color;
+  color: $white;
+}
+
+.c-btn:hover::after {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(1%) hue-rotate(21deg) brightness(104%) contrast(101%); 
+  right: rem(5); 
+}

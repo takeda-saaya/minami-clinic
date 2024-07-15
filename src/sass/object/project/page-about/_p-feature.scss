@@ -1,0 +1,28 @@
+@use "global" as *;
+
+.p-feature__wrap{
+  display: flex;
+  flex-direction: column-reverse;
+  @include mq("md") {
+    flex-direction: row-reverse;
+    gap: rem(93);
+    margin-left: auto;
+  }
+}
+
+.p-feature__img{
+  width: 100%;
+  max-width: min(vw(375,334),rem(450));
+  aspect-ratio: 334/230;
+  margin-top: rem(37);
+  margin-left: auto;
+  @include mq("md") {
+    max-width: vw($full,640);
+    aspect-ratio:640/438; 
+    margin: 0;
+  }
+}
+.p-feature__img,
+.p-feature__img img{
+  border-radius: vw($full,20) 0 0 vw($full,20) ;
+}

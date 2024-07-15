@@ -1,0 +1,13 @@
+@use "global" as *;
+
+/* contact-form-7プラグイン */
+/* 送信中のAjaxローダーを非表示 */
+div.wpcf7 .ajax-loader {
+  display: none !important;
+}
+
+/* 送信完了のメッセージボックスを非表示にする */
+.wpcf7-mail-sent-ok {
+  display: none !important;
+}
+

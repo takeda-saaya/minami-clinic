@@ -1,0 +1,27 @@
+@use "global" as *;
+
+.p-sidebar-blog__title{
+  position: relative;
+}
+
+.p-sidebar-blog__title::before{
+  position: absolute;
+  content: "";
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: rem(24);
+  height: rem(24);
+  aspect-ratio: 1/1;
+  top: 0;
+  left: 0;
+  background-image: url(".././images/sidebar/sidebar-blog-icon.png");
+}
+
+.p-sidebar-blog__cards{
+  display: grid;
+  margin-top: rem(20);
+  gap: rem(20);
+  justify-content: start;
+  align-items: center;
+}

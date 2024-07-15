@@ -1,0 +1,41 @@
+@use "global" as *;
+
+.p-mv {
+  padding-top: rem(15);
+  @include mq("md") {
+    padding-top: min(40,vw($full,40)); 
+  }
+}
+
+.p-mv__inner{
+  padding: 0 rem(20);
+  @include mq("md") {
+    padding: 0 rem(60);
+}
+}
+
+.p-mv__titles {
+  position: absolute;
+  width: 100%;
+  max-width: rem(264);
+  bottom: rem(39);
+  left: rem(20);
+  z-index: 10;
+  @include mq(md) {
+    max-width: rem(414);
+    bottom: rem(55);
+    left: rem(62);
+  }
+}
+
+.p-mv-swiper__img img{
+  object-position: left top;
+}
+
+.p-swiper__container{
+  height: rem(447);
+  position: relative;
+  @include mq("md") {
+    height: vw($full,520);
+  }
+}

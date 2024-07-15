@@ -1,0 +1,113 @@
+@use "global" as *;
+
+.p-concept{
+  position: relative;
+  padding-top: rem(111);
+  overflow: hidden;
+  @include mq("md") {
+    padding-top: vw($full,180);
+    padding-bottom: vw($full,108);
+  }
+}
+
+.p-concept::before{
+  position: absolute;
+  content: "";
+  background-position:top left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(".././images/common/concept-bg__sp.png");
+  width: 100%;
+  height:min(vw(375,309),rem(450));
+  top: 0;
+  left: rem(12);
+  z-index: -5;
+  @include mq("md") {
+    background-image: url(".././images/common/concept-bg__pc.png");
+    left: vw($full,420);
+    height: 100%;
+    background-size: contain;
+  }
+}
+
+.p-concept__wrap{
+  @include mq("md") {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: row-reverse;
+    gap: vw($full,95);
+  }
+}
+
+.p-concept__body{
+  padding: 0 rem(20);
+  @include mq("md") {
+    width: vw($full,407);
+    padding: 0;
+  }
+}
+
+.p-concept__en-title{
+  color: $main-color;
+  font-size: rem(11);
+  font-weight: $bold;
+  letter-spacing:1.4px;
+  text-transform: uppercase;
+  @include mq("md") {
+    font-size: vw($full,14);
+  }
+}
+
+.p-concept__ja-title{
+  font-size: rem(20);
+  font-weight: $bold;
+  line-height: 1.6; 
+  letter-spacing: 0.08em;
+  margin-top: rem(14);
+  @include mq("md") {
+    font-size: vw($full,28);
+    margin-top: vw($full,36);
+    letter-spacing: vw($full,0.08);
+    }
+}
+
+.p-concept__text{
+  font-size: rem(14);
+  line-height: 1.7; 
+  margin-top: rem(27);
+  @include mq("md") {
+    margin-top: vw($full,36);
+    font-size:vw($full,14) ;
+  } 
+}
+
+.p-concept__btn{
+  display: flex;
+  justify-content: center;
+  margin-top: rem(37);
+  @include mq("md") {
+    justify-content: start;
+    margin-top: vw($full,37);
+  }
+}
+
+.p-concept__img{
+  width: 100%;
+  max-width: min(vw(375,334),rem(450));
+  aspect-ratio:334/230; 
+  margin-top: rem(41);
+  margin-right: auto;
+  @include mq("md") {
+    max-width: vw($full,640);
+    aspect-ratio:640/438; 
+    margin: 0;
+  }
+}
+
+.p-concept__img,
+.p-concept__img img{
+  border-radius: 0 vw($full,20) vw($full,20) 0;
+}
+
+ 

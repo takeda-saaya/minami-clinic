@@ -1,0 +1,27 @@
+@use "global" as *;
+
+.l-bottom-bg{
+  position: relative;
+  padding-bottom:vw(375,28);
+  @include mq("md") {
+    padding-bottom: vw($full,97);
+}
+
+}
+
+.l-bottom-bg::after{
+  position: absolute;
+  content: "";
+  background-position:top left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  left: 0;
+  background-image: url(".././images/common/bottom-bg__sp.png");
+  bottom: 0;
+  height: vw(375,28);
+    @include mq("md") {
+    background-image: url(".././images/common/bottom-bg__pc.png");
+    height: vw($full,97);
+  }
+}

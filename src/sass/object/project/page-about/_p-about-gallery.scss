@@ -1,0 +1,32 @@
+@use "global" as *;
+
+.p-gallery__title-wrap{
+  text-align: center;
+}
+
+.p-gallery__photos{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, rem(200)));
+  place-items: center;
+  justify-content: center;
+  gap: vw(375,11);
+  row-gap: vw(375,11);
+  margin-top: rem(40);
+  @include mq("md") {
+    grid-template-columns: repeat(3,1fr);
+    margin-top: rem(60);
+    gap: vw($full,24);
+    row-gap: vw($full,24);
+  }
+}
+
+.p-gallery__photo{
+  width: 100%;
+  max-width: min(vw(375,162),rem(200));
+  aspect-ratio: 1/1;
+  border-radius: 20px;
+  @include mq("md") {
+  max-width: min(vw($full,317),rem(400));
+  }
+}
+

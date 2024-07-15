@@ -1,0 +1,27 @@
+@use "global" as *;
+
+.p-blog__title-wrap{
+  text-align: center;
+}
+
+.p-blog__cards{
+  display: grid;
+  place-items: center;
+  gap: rem(20);
+  margin-top: rem(48);
+  @include mq("md") {
+    grid-template-columns: repeat(auto-fit, rem(300));
+    justify-content: center;
+    gap: rem(50);
+    row-gap: rem(60);
+    margin-top: rem(80);
+  }
+}
+
+.p-blog__btn{
+  margin-top: rem(40);
+  text-align: center;
+  @include mq("md") {
+    margin-top: rem(60);
+  } 
+}

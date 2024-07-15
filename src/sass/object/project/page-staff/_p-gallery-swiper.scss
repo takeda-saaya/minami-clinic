@@ -1,0 +1,10 @@
+@use "global" as *;
+
+.swiper-wrapper {
+  transition-timing-function: linear;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+}

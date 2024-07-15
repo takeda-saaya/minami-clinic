@@ -1,0 +1,49 @@
+@use "global" as *;
+
+.l-decos{
+  position: relative;
+}
+
+.l-decos::before,
+.l-decos::after{
+  position: absolute;
+  content: "";
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.l-decos::before{
+  background-image: url(".././images/common/bottom-decos1__sp.png");
+  width: rem(56);
+  height: rem(60);
+  aspect-ratio: 56/60;
+  right: rem(7);
+  bottom: rem(-7);
+  z-index: 1;
+  @include mq("md") {
+    background-image: url(".././images/common/bottom-decos1__sp.png");
+    width: vw($full,125);
+    height: vw($full,138);
+    aspect-ratio: 125/138;
+    right: rem(20);
+    bottom: rem(-21);
+  }
+}
+
+.l-decos::after{
+  background-image: url(".././images/common/bottom-decos2__pc.png");
+  width: rem(24);
+  height: rem(25);
+  aspect-ratio: 24/25;
+  left: rem(12);
+  bottom: 0;
+  @include mq("md") {
+    background-image: url(".././images/common/bottom-decos1__pc.png");
+    width: rem(57);
+    height: rem(56);
+    aspect-ratio: 57/56;
+    left: rem(40);
+    bottom: 0;
+  }
+}

@@ -1,0 +1,108 @@
+@use "global" as *;
+
+.p-sp-nav {
+  background-color: $sub-color1;
+  transform: translateX(100%);
+  transition: 0.3s ease-in-out;
+  overflow: hidden;
+  overflow-y: scroll;
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.p-sp-nav__items {
+  padding: rem(40) rem(60.5) rem(170);
+  margin-top: rem(60);
+  overflow: auto;
+}
+
+.p-sp-nav__item {
+  position: relative;
+  border-top: 2px dotted $white;
+}
+
+.p-sp-nav__item:nth-last-child(1) {
+  border-bottom: 2px dotted $white;
+}
+
+.p-sp-nav__item:nth-child(1)::before,
+.p-sp-nav__item:nth-child(2)::before,
+.p-sp-nav__item:nth-child(3)::before,
+.p-sp-nav__item:nth-child(4)::before,
+.p-sp-nav__item:nth-child(5)::before,
+.p-sp-nav__item:nth-child(6)::before {
+  position: absolute;
+  content: "";
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  max-width: rem(24);
+  height: rem(24);
+  aspect-ratio: 1/1;
+  top: 50%;
+  transform: translatey(-50%);
+  left: 0;
+}
+
+.p-sp-nav__item:nth-child(1)::before {
+  background-image: url(".././images/header/icon-1.png");
+}
+
+.p-sp-nav__item:nth-child(2)::before {
+  background-image: url(".././images/header/icon-2.png");
+}
+
+.p-sp-nav__item:nth-child(3)::before {
+  background-image: url(".././images/header/icon-3.png");
+}
+
+.p-sp-nav__item:nth-child(4)::before {
+  background-image: url(".././images/header/icon-4.png");
+}
+
+.p-sp-nav__item:nth-child(5)::before {
+  background-image: url(".././images/header/icon-5.png");
+}
+
+.p-sp-nav__item:nth-child(6)::before {
+  background-image: url(".././images/header/icon-6.png");
+}
+
+.p-sp-nav__item:nth-child(1)::after,
+.p-sp-nav__item:nth-child(2)::after,
+.p-sp-nav__item:nth-child(3)::after,
+.p-sp-nav__item:nth-child(4)::after,
+.p-sp-nav__item:nth-child(5)::after,
+.p-sp-nav__item:nth-child(6)::after {
+  position: absolute;
+  content: "";
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(".././images/header/menu-arrow.png");
+  width: 100%;
+  max-width: rem(14);
+  height: rem(14);
+  aspect-ratio: 1/1;
+  top: 50%;
+  transform: translatey(-50%);
+  right: 0;
+}
+
+.p-sp-nav__item a {
+  padding-top: rem(16.5);
+  padding-bottom: rem(17.5);
+  padding-left: rem(38);
+  color: $white;
+  font-size: rem(14);
+}
+
+body.is-open {
+  overflow: hidden;
+  .p-sp-nav {
+    transform: translateX(0);
+  }
+}
+

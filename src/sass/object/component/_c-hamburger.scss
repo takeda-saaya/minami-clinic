@@ -1,0 +1,62 @@
+@use "global" as *;
+
+$drawer-width: 27px; //ドロワーの幅
+$drawer-height: 4px; //ドロワー線の高さ
+$drawer-color: $main-color; //ドロワー線の色
+
+.c-hamburger {
+  width: inherit;
+  height: inherit;
+  transition: all 0.3s ease-in-out;
+}
+
+.c-hamburger__line {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: $drawer-width;
+  height: $drawer-height;
+  background-color: $drawer-color;
+  border-radius: 2px;
+  transition: inherit;
+  transform: scaleY(0.5) translateY(1px);
+  &::before,
+  &::after {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    content: "";
+    transition: inherit;
+    border-radius: 2px;
+  }
+}
+
+.c-hamburger__line::before {
+  top: rem(-10);
+  }
+  .c-hamburger__line::after {
+  top: rem(10);
+    }
+    
+.c-hamburger[aria-expanded="true"] .c-hamburger__line {
+  background-color: transparent;
+  
+  &::before,
+  &::after {
+    top: 0;
+  }
+}
+.c-hamburger[aria-expanded="true"] .c-hamburger__line::before {
+  transform: rotate(45deg);
+  background-color: $white;
+}
+
+.c-hamburger[aria-expanded="true"] .c-hamburger__line::after {
+  transform: rotate(-45deg);
+  background-color: $white;
+}

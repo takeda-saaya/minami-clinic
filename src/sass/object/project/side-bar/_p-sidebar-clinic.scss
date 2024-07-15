@@ -1,0 +1,64 @@
+@use "global" as *;
+
+.p-sidebar-clinic__title{
+  position: relative;
+}
+
+.p-sidebar-clinic__title::before{
+  position: absolute;
+  content: "";
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: rem(24);
+  height: rem(24);
+  aspect-ratio: 1/1;
+  top: 0;
+  left: 0;
+  background-image: url(".././images/sidebar/sidebar-clinic-icon.png");
+}
+
+.p-sidebar-clinic__img{
+  width: 100%;
+  max-width: vw(375,335);
+  aspect-ratio: 335/210;
+  margin-top: rem(20);
+}
+
+.p-sidebar-clinic__bottom{
+  display: grid;
+  gap: rem(10);
+  margin-top: rem(20);
+}
+
+.p-sidebar-clinic__name{
+  font-size: rem(16);
+  font-weight: $bold;
+}
+
+.p-sidebar-clinic__text{
+  font-size: rem(14);
+  line-height: 1.71;
+}
+
+.p-sidebar-clinic a{
+  position: relative;
+  display: inline-block;
+  color: $main-color;
+  font-size: rem(14);
+}
+
+.p-sidebar-clinic a::before{
+  position: absolute;
+  content: "";
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: rem(18);
+  height: rem(18);
+  aspect-ratio: 1/1;
+  top: 50%;
+  left: rem(84);
+  transform: translatey(-50%);
+  background-image: url(".././images/common/link-arrow.png");
+}

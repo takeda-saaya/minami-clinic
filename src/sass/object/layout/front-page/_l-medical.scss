@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.l-medical{
+  margin-top: rem(97);
+  @include mq("md") {
+    margin-top: rem(135);
+  }
+}

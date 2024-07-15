@@ -1,0 +1,65 @@
+@use "global" as *;
+
+.p-pager__list {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.p-pager__item-prev,
+.p-pager__item-next {
+  border-radius: 4px;
+  background: #1391E6;
+  color: $white;
+  font-size: 14px;
+  min-width: 108px;
+  display: flex;
+  align-items: center;
+}
+
+.p-pager__item-prev a,
+.p-pager__item-next a {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+  padding: 9px 15px;
+  opacity: 1;
+}
+
+.p-pager__item-prev a:hover,
+.p-pager__item-next a:hover {
+  opacity: 1;
+}
+
+.p-pager__item-prev img,
+.p-pager__item-next img {
+  width: 100%;
+  max-width: 16px;
+  height: 16px;
+  aspect-ratio: 1/1;
+  transition: transform 0.3s ease;
+}
+
+.p-pager__item-prev a:hover img {
+  transform: translateX(-4px);
+}
+
+.p-pager__item-next a:hover img {
+  transform: translateX(4px);
+}
+
+.p-pager__item {
+  border-radius: 4px;
+  border: 1px solid currentColor;
+  color: $main-color;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px 20px;
+  width: 95px;
+}
+
+.p-pager__item a{
+   white-space: nowrap;
+}

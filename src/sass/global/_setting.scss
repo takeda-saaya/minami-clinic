@@ -1,0 +1,80 @@
+@use "sass:math";
+
+// remへの計算式（16pxを基準としている。10pxを基準とする場合は16を10に変更する）
+@function rem($pixels) {
+  @return math.div($pixels, 16) * 1rem;
+}
+
+////////////////////
+// インナー幅設定
+////////////////////
+// コンテンツのインナー幅（最も共通の幅が多い部分）
+$inner: 1000px;
+
+// full
+$full: 1280;
+
+// 余白
+$padding-pc: 25px;
+$padding-sp: rem(20);
+
+////////////////////
+// フォント設定
+////////////////////
+
+$base-font-family: "M PLUS Rounded 1c", sans-serif;
+// ※検証ツールでしっかり反映されているか確認する
+
+// フォントウェイト
+$light: 300;
+$normal: 400;
+$medium: 500;
+$bold: 700;
+
+////////////////////
+// 色の指定
+////////////////////
+
+$black: #393939;
+$white: #fff;
+$main-color: #1391e6;
+$sub-color1: #0060a0;
+$sub-color2: #dff1fd;
+$accent-color: #ee5a6d;
+////////////////////
+// メディアクエリとブレークポイントの設定
+////////////////////
+
+//ブレイクポイント
+$breakpoints: (
+  sm: 600,
+  md: 768,
+  lg: 1024,
+  xl: 1440,
+  ll: 2300,
+);
+
+//メディアクエリー
+$mediaquerys: (
+  sm: "screen and (min-width: #{map-get($breakpoints,'sm')}px)",
+  md: "screen and (min-width: #{map-get($breakpoints,'md')}px)",
+  lg: "screen and (min-width: #{map-get($breakpoints,'lg')}px)",
+  xl: "screen and (min-width: #{map-get($breakpoints,'xl')}px)",
+  ll: "screen and (min-width: #{map-get($breakpoints,'ll')}px)",
+);
+
+// @include mq(){}で書くとブレークポイントが反映される（初期値はmd）
+@mixin mq($mediaquery: md) {
+  @media #{map-get($mediaquerys, $mediaquery)} {
+    @content;
+  }
+}
+
+body {
+  line-height: 1.5;
+  color: $black;
+  background-color: $white;
+  font-family: $base-font-family;
+  font-size: rem(16);
+  font-weight: $medium;
+}

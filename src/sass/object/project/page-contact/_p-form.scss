@@ -1,0 +1,309 @@
+@use "global" as *;
+
+.p-form {
+  border-top: 1px solid #DDDDDD;
+}
+
+.p-form__content {
+  padding: rem(24) 0;
+  border-bottom: 1px solid #DDDDDD;
+  @include mq(md) {
+    display: flex;
+    gap: rem(40);
+    padding: rem(28) 0;
+  }
+}
+
+.p-form__head {
+  display: flex;
+  gap: rem(12);
+  place-items: center;
+  padding-bottom: rem(12);
+  @include mq(md) {
+    width: rem(200);
+    padding-bottom: 0;
+    gap: rem(16);
+  }
+}
+
+.p-form__title {
+  cursor: pointer;
+  @include mq(md) {
+    display: block;
+  }
+}
+
+.p-form__add {
+  display: block;
+  color: $white;
+  width: 100%;
+  font-size: rem(12);
+  font-weight: $bold;
+  max-width: rem(36);
+  text-align: center;
+  padding: rem(2) rem(6);
+  background-color: $accent-color;
+  border-radius: 4px;
+}
+
+.p-form__item {
+  @include mq(md) {
+    width: 100%;
+    max-width: rem(488);
+    margin-block: auto;
+  }
+}
+
+.p-form__text {
+  width: 100%;
+  padding: rem(12) rem(16);
+  font-size: rem(16);
+  font-weight: $medium;
+  background-color: #F6F6F6;
+  border-radius: 4px;
+}
+
+.p-form__text::placeholder,
+.p-form__textarea::placeholder{
+  color: #C2C2C2;
+}
+
+
+.p-form__content.p-form__content--textarea {
+  align-items: center;
+}
+
+.p-form__textarea {
+  width: 100%;
+  height: rem(160);
+  padding: rem(12) rem(16);
+  font-size: rem(16);
+  font-weight: $medium;
+  background-color:#F6F6F6;
+  border-radius: 4px;
+  @include mq(md) {
+    height: rem(200);
+  }
+}
+
+.p-form__btn{
+  margin-top: rem(70);
+  text-align: center;
+  @include mq("md") {
+    margin-top: rem(72);
+  }
+}
+
+
+// /////////////////////////////////
+// セレクトボックス
+.p-form__item.p-form__item--select {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  @include mq(md) {
+    max-width: rem(488);
+  }
+}
+
+.p-form__item.p-form__item--select::before {
+  border-right: 1.7px solid $black;
+  border-top: 1.7px solid $black;
+  bottom: 0;
+  content: "";
+  width: rem(10);
+  height: rem(10);
+  position: absolute;
+  top: 50%;
+  right: rem(15);
+  z-index: 1;
+  transform: rotate(135deg) translateX(-50%);
+  cursor: pointer;
+  @include mq(md) {
+    top: rem(22);
+    right: rem(40);
+    width: rem(15);
+    height: rem(15);
+  }
+}
+
+.p-form__select {
+  cursor: pointer;
+  width: 100%;
+  padding: rem(12) rem(16);
+  font-size: rem(16);
+  font-weight: $medium;
+  background-color: #F6F6F6;
+  border-radius: 4px;
+  color: #C2C2C2;
+  @include mq(md) {
+    height: rem(67);
+    padding-left: rem(18);
+  }
+}
+
+
+// /////////////////////////////////
+// ラジオボタン
+
+.wpcf7-list-item{
+ margin-left: 0;
+}
+
+[type="radio"] + span {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1;
+  margin: 0 32px 0 0;
+  padding: 8px 0 8px 32px;
+  position: relative;
+}
+
+[type="radio"] + span::before {
+  background: #fff;
+  border: 1px solid #1391E6;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 24px;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+}
+
+[type="radio"]:checked + span::after {
+  background: #1391E6;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 12px;
+  left: 6px;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+}
+
+// /////////////////////////////////
+// チェックボックス
+
+ .p-form__check label{
+  margin-bottom: rem(10);
+  @include mq("md") {
+    margin-bottom: rem(16);
+  }
+ }
+
+.p-form__attention{
+  color: #888;
+  font-size: rem(11);
+}
+
+[type="checkbox"] + span {
+  cursor: pointer;
+  display: inline-block;
+  font-size: rem(14);
+  line-height: 1;
+  margin-right: rem(19);
+  padding-left: rem(32);
+  position: relative;
+  transition: all 1s ease 0s;
+  @include mq("md") {
+    margin-right: rem(27);
+  }
+}
+
+[type="checkbox"] + span::before {
+  background: #fff;
+  border: 1px solid #1391E6;
+  content: "";
+  display: block;
+  height: rem(24);
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: rem(24);
+}
+
+[type="checkbox"] + span::after {
+  opacity: 0;
+  transition: opacity 0.3s ease 0s;
+}
+
+[type="checkbox"]:checked + span::after {
+  position: absolute;
+  content: "";
+  display: block;
+  height: rem(14.4);
+  width: rem(24);
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+  left: 0;
+  margin-top: -0.2em;
+  opacity: 1;
+  border-bottom: 2px solid #1391E6;
+  border-left: 2px solid #1391E6;
+}
+
+
+.p-form__head--vertical{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+  padding-bottom: rem(20);
+  place-items: normal;
+  @include mq("md") {
+    gap: 0;
+  }
+}
+
+.p-form__head-top{
+  display: flex;
+  gap: rem(26);
+  align-items: center;
+  width: inherit;
+}
+
+// /////////////////////////////////
+// 希望日
+
+.p-form__items{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: rem(20);
+}
+
+.p-form__items{
+  .wpcf7-date {
+   &::-webkit-calendar-picker-indicator {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+   }
+  }
+}
+
+[type="date"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url(".././images/page-reservation/calendar-icon.png");
+  background-position:right 10px center;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  position: relative;
+  color:#C2C2C2 ;
+}
+

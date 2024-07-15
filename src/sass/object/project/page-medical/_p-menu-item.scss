@@ -1,0 +1,43 @@
+@use "global" as *;
+
+.p-menu-item a{
+  color: $main-color;
+  text-align: center;
+  font-size: rem(20);
+  font-weight: $bold;
+  letter-spacing: 1.6px;
+  border-radius: 12px;
+  border: 1px solid currentColor;
+  background: $white;
+  padding: rem(15) rem(30);
+  @include mq("md") {
+    display: inline-block;
+    padding: rem(18) rem(32);
+    border-radius: 12px;
+    border: 2px solid currentColor;
+  }
+}
+
+.p-menu-item a:hover {
+  position: relative; 
+  display: inline-block;
+  width: 100%;
+  padding: rem(11) rem(32) rem(25);;
+} 
+
+.p-menu-item a::after {
+  content: '';
+  position: absolute;
+  bottom: rem(5);
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg);
+  width: rem(15);
+  height: rem(15); 
+  transition: transform 0.3s ease; 
+}
+
+.p-menu-item a:hover::after {
+  background-image: url("../images/common/btn-arrow.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}

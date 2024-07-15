@@ -1,0 +1,27 @@
+@use "global" as *;
+
+.l-top-bg{
+  position: relative;
+  padding-top: vw(375,88);
+  @include mq("md") {
+    padding-top: vw($full,203);
+  }
+}
+
+.l-top-bg::before{
+  position: absolute;
+  content: "";
+  background-position:top left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  left: 0;
+  background-image: url(".././images/common/top-bg__sp.png");
+  top: 0;
+  height: vw(375,88);
+  @include mq("md") {
+    background-image: url(".././images/common/top-bg__pc.png");
+    height: vw($full,203);
+  }
+}
+

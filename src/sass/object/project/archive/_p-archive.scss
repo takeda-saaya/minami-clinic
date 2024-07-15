@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.p-archive__content{
+  @include mq("md") {
+    display: flex;
+    gap: rem(30);
+  }
+}

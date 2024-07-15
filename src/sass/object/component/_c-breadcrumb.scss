@@ -1,0 +1,17 @@
+@use "global" as *;
+
+.c-breadcrumb span{
+  display: inline-block;
+}
+
+.c-breadcrumb span {
+	color: #c2c2c2;
+	padding-right: 4px;
+  font-size: rem(12);
+}
+
+.c-breadcrumb span:not(:first-child) span,
+.c-breadcrumb span:not(:first-child) a span {
+	color: $black;
+	padding-left: 5px;
+}

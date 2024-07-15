@@ -1,0 +1,52 @@
+@use "global" as *;
+
+.p-footer-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  gap: rem(12);
+  width: 100%;
+  padding: rem(6) 0 ;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  z-index: 999;
+}
+
+.p-footer-cta__left a {
+  position: relative;
+  color: $main-color;
+  text-align: center;
+  font-size: rem(20);
+  font-weight: $bold;
+  padding-left: rem(22);
+}
+
+.p-footer-cta__left a::before {
+  position: absolute;
+  content: "";
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(".././images/common/nav-tel.png");
+  width: 100%;
+  max-width: rem(18);
+  height: rem(18);
+  aspect-ratio: 1/1;
+  top: 50%;
+  transform: translatey(-50%);
+  left: 0;
+}
+
+.p-footer-cta__text {
+  color: $black;
+  text-align: center;
+  font-size: rem(10);
+}
+
+.p-footer-cta__contact {
+  width: 100%;
+  max-width: rem(157);
+  aspect-ratio: 157/47;
+}

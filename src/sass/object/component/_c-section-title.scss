@@ -1,0 +1,48 @@
+@use "global" as *;
+
+.c-section-title{
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  font-size: rem(20);
+  font-weight: $bold;
+  letter-spacing: 1.6px;
+  @include mq("md") {
+    font-size: rem(28);
+    letter-spacing: 2.24px;
+  }
+}
+
+.c-section-title::after,
+.c-section-title::before{
+  position: absolute;
+  content: "";
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: rem(49);
+  height: rem(13);
+  top: 50%;
+  transform: translatey(-50%);
+  @include mq("md") {
+    width: rem(67);
+    height: rem(20);
+
+  }
+}
+
+.c-section-title::after{
+  background-image: url(".././images/common/title-decoration1.png");
+  left: rem(-64);
+  @include mq("md") {
+    left: rem(-95);
+  }
+}
+
+.c-section-title::before{
+  background-image: url(".././images/common/title-decoration2.png");
+  right: rem(-64);
+  @include mq("md") {
+    right: rem(-95);
+  }
+}

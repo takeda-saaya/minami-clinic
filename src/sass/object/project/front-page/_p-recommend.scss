@@ -1,0 +1,32 @@
+@use "global" as *;
+
+.p-recommend__inner{
+  @include mq("md") {
+    max-width:calc(rem(996) + ($padding-pc) * 2 );
+  }
+}
+
+.p-recommend__title-wrap{
+  text-align: center;
+}
+
+.p-recommend__items{
+  display: grid;
+  gap: rem(57);
+  margin-top: rem(39);
+  @include mq("md") {
+    margin-top: rem(60);
+    grid-auto-flow: column;
+    gap: vw($full,66);
+  }
+}
+
+.p-recommend__item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @include mq("md") {
+    justify-content: start;
+  }
+}

@@ -1,0 +1,27 @@
+@use "global" as *;
+
+.c-form-btn{
+  display: inline-block;
+  min-width: rem(273);
+  border-radius: 24px;
+  border: 1px solid currentColor;
+  background:$white;
+  color: $main-color;
+  font-size: rem(14);
+  line-height: 1;
+  letter-spacing: 1.12px;
+  padding: rem(11) rem(40);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  @include mq("md") {
+    min-width: rem(360);
+    border-radius: 28px;
+    padding: rem(19) rem(40);
+    font-size: rem(16);
+    letter-spacing: 1.28px;
+  }
+}
+
+.c-form-btn:hover{
+  background-color: $main-color;
+  color: $white;
+}
