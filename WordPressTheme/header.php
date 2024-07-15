@@ -24,10 +24,10 @@
 
   <div class="l-site-wrapper">
 
-    <header class="p-header l-header <?php if (is_front_page()) {
+     <header class="p-header l-header <?php if (is_front_page()) {
                                         echo 'l-header';
                                       } else {
-                                        echo 'l-header';
+                                        echo 'l-sub-header';
                                       } ?>">
 
       <div class="p-header__inner">
